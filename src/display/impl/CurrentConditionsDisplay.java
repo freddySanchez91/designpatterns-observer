@@ -22,10 +22,10 @@ public class CurrentConditionsDisplay implements IDisplayElement , IObserver {
     }
 
     @Override
-    public void update(float temp, float humidiy, float pressure) {
+    public void update() {
 
-        this.temperature = temp;
-        this.humidity = humidiy;
+        this.temperature = weatherData.getTemperature();
+        this.humidity = weatherData.getHumidity();
         display();
     }
 }

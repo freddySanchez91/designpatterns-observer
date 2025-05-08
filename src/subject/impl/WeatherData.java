@@ -30,7 +30,8 @@ public class WeatherData implements ISubject {
     @Override
     public void notifyObservers() {
         for(IObserver observer: observers){
-            observer.update(temperature, humidity, pressure);
+            //observer.update(temperature, humidity, pressure);
+            observer.update();
         }
     }
 
@@ -45,4 +46,35 @@ public class WeatherData implements ISubject {
         measurmentschanged();
     }
 
+    public List<IObserver> getObservers() {
+        return observers;
+    }
+
+    public void setObservers(List<IObserver> observers) {
+        this.observers = observers;
+    }
+
+    public float getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(float temperature) {
+        this.temperature = temperature;
+    }
+
+    public float getHumidity() {
+        return humidity;
+    }
+
+    public void setHumidity(float humidity) {
+        this.humidity = humidity;
+    }
+
+    public float getPressure() {
+        return pressure;
+    }
+
+    public void setPressure(float pressure) {
+        this.pressure = pressure;
+    }
 }
